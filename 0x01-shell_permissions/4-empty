@@ -1,2 +1,2 @@
 #!/bin/bash
-touch hello "this command creates a new file"
+touch hello # this command creates a new file
