@@ -9,6 +9,3 @@ do
     echo "To infinity and beyond"
     sleep 2
 done
-
-# A Bash script that sends a SIGTERM to the 7-highlander process
-pkill -f 7-highlander
