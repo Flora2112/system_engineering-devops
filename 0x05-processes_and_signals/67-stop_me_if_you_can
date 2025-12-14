@@ -1,19 +1,15 @@
 #!/usr/bin/env bash
 # This script sends the SIGTERM signal to the 7-highlander process
 
-# Find the PID of the running 7-highlander script
-# -f matches the full command line to accurately target the script
-PID=$(pgrep -f 7-highlander)
+# Find the PID using ps and grep, excluding the grep process itself
+# This method is often the most reliable way to find a script's PID in a complex environment.
+PID=$(ps aux | grep "[7]-highlander" | awk '{print $2}')
 
-# Check if a PID was found
+# Check if a PID was found (PID is non-empty)
 if [ -n "$PID" ]; then
-    # Send SIGTERM (signal 15, the default) to the process
+    # Send SIGTERM (signal 15) to the found PID
     kill -15 "$PID"
     
     # Output the required success message
     echo "OK"
-else
-    # Optionally, handle the case where the process isn't running (optional, but good practice)
-    # echo "Error: 7-highlander not found"
-    : # No output if not found, to avoid confusing the checker
 fi
