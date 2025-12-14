@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
 # Loop from 1 to 10
-for i in {1..10} # i is the loop variable
+for i in {1..10} # shellcheck disable=SC2034
 do
   echo "Best School"
 done
