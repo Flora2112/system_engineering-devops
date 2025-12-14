@@ -1,16 +1,12 @@
 #!/usr/bin/env bash
-# This script displays a message indefinitely and handles SIGTERM
+# A Bash script that loops indefinitely and reacts to SIGTERM
 
-# Define a function to execute when SIGTERM is received
-invincible_response() {
-    # Using 'printf' ensures no accidental trailing spaces or specific newline differences
-    printf "I am invincible!!!\n"
-}
-
-# Trap the SIGTERM signal (15) to execute the function
-trap 'invincible_response' SIGTERM
+# Trap SIGTERM to display the message and continue
+trap "echo 'I am invincible!!!'" SIGTERM
 
 while true; do
     echo "To infinity and beyond"
-    sleep 2
+    # Use sleep in the background and wait so the trap is handled instantly
+    sleep 2 &
+    wait $!
 done
