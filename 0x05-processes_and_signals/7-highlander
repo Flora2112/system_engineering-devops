@@ -2,7 +2,7 @@
 # A Bash script that loops indefinitely and reacts to SIGTERM
 
 # Trap SIGTERM to display the message and continue
-trap "echo 'I am invincible!!!'" SIGTERM
+trap "echo 'echo I am invincible!!!' SIGTERM
 
 while true; do
     echo "To infinity and beyond"
