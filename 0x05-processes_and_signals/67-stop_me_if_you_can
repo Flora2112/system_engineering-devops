@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# A Bash script that stops the 7-highlander process
+# This script sends the SIGTERM signal to the 7-highlander process
 
+# pkill -f sends SIGTERM (signal 15) to all processes matching the full command line.
 pkill -f 7-highlander
