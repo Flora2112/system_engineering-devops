@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash.
 # Define the filename
 file="school"
 
