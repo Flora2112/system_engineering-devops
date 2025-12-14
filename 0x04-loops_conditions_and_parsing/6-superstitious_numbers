@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# This script displays numbers from 1 to 20 with specific "bad luck" messages for certain iterations.
+
+# Initialize a counter variable
+count=1
+
+# Use a while loop to iterate from 1 to 20
+while [ "$count" -le 20 ]; do
+  # Display the current number
+  echo "$count"
+
+  # Use a case statement to check for specific iteration numbers
+  case "$count" in
+    4)
+      echo "bad luck from China"
+      ;;
+    9)
+      echo "bad luck from Japan"
+      ;;
+    17)
+      echo "bad luck from Italy"
+      ;;
+    *)
+      # The default case for all other numbers (no additional action needed)
+      ;;
+  esac
+
+  # Increment the counter
+  ((count++))
+done
