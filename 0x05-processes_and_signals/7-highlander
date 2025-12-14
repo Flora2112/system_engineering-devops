@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# A Bash script that loops indefinitely and displays a message when receiving SIGTERM
+
+# Trap SIGTERM (signal 15) and print the specific message
+trap "echo 'I am invincible!!!'" SIGTERM
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
